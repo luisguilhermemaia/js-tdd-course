@@ -1,4 +1,6 @@
 const fizzbuzz = (n) => {
+  if (n === 0) return 0;
+
   if (n % 3 === 0 && n % 5 === 0) return 'FizzBuzz';
 
   if (n % 3 === 0) return 'Fizz';
@@ -7,6 +9,5 @@ const fizzbuzz = (n) => {
 
   return n;
 };
-
 
 export default fizzbuzz;
