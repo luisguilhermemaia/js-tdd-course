@@ -1,7 +1,9 @@
-const a = 12;
+const sum = (num1, num2) => num1 + num2;
+const sub = (num1, num2) => num1 - num2;
+const mult = (num1, num2) => num1 * num2;
+const div = (num1, num2) =>
+  (num2 === 0) ?
+    'Não é possivel divisao por zero' :
+    num1 / num2;
 
-const b = 4;
-
-const c = '142dfjsngkd'
-
-console.log(a, b, c)
+export { sum, sub, mult, div };
