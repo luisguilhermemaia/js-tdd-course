@@ -1,59 +1,30 @@
 /* eslint-env node, mocha */
+/*
+Desafio FizzBuzz
+Escreva uma lib que receba um número e:
+Se o número for divisível por 3, no lugar do número escreva 'Fizz' - X
+Se o número for divisível por 5, no lugar do número escreva 'Buzz' - X
+Se o número for divisível por 3 e 5, no lugar do número escreva 'FizzBuzz' - X
+Se não for múltiplo de nada, retorna o número
+ */
+
 import { expect } from 'chai';
-import { sum, sub, mult, div } from '../src/main';
+import fizzbuzz from '../src/main';
 
-describe('Calc ', () => {
-  describe('smoke tests', () => {
-    it('deve existir o metodo soma', () => {
-      expect(sum).to.exist;
-      expect(sum).to.be.a.function;
-    });
-
-    it('deve existir o metodo sub', () => {
-      expect(sub).to.exist;
-      expect(sub).to.be.a.function;
-    });
-
-    it('deve existir o metodo mult', () => {
-      expect(mult).to.exist;
-      expect(mult).to.be.a.function;
-    });
-
-    it('deve existir o metodo div', () => {
-      expect(div).to.exist;
-      expect(div).to.be.a.function;
-    });
+describe('fizbuzz ', () => {
+  it('Should print `Fizz` when divisible by 3  ', () => {
+    expect(fizzbuzz(9)).to.be.equal('Fizz');
   });
 
-  describe('Sum method', () => {
-    it('should return 4 when `sum(2,2)`', () => {
-      expect(sum(2, 2)).to.be.equal(4);
-    });
+  it('Should divisible by 5 prints `Buzz`', () => {
+    expect(fizzbuzz(10)).to.be.equal('Buzz');
   });
 
-  describe('Sub method', () => {
-    it('should return 0 when `sub(2,2)`', () => {
-      expect(sub(2, 2)).to.be.equal(0);
-    });
-
-    it('should return -4 when `sub(6,10)`', () => {
-      expect(sub(6, 10)).to.be.equal(-4);
-    });
+  it('Should divisible by 3 and by 5 prints `FizzBuzz`', () => {
+    expect(fizzbuzz(15)).to.be.equal('FizzBuzz');
   });
 
-  describe('Mult method', () => {
-    it('should return 4 when `multi(2,2)`', () => {
-      expect(mult(2, 2)).to.be.equal(4);
-    });
-  });
-
-  describe('Div method', () => {
-    it('should return 1 when `div(2,2)`', () => {
-      expect(div(2, 2)).to.be.equal(1);
-    });
-
-    it('should return `Não é possivel divisao por zero`', () => {
-      expect(div(2, 0)).to.be.equal('Não é possivel divisao por zero');
-    });
+  it('Should divisible by anything prints the number', () => {
+    expect(fizzbuzz(7)).to.be.equal(7);
   });
 });

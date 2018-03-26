@@ -1,9 +1,12 @@
-const sum = (num1, num2) => num1 + num2;
-const sub = (num1, num2) => num1 - num2;
-const mult = (num1, num2) => num1 * num2;
-const div = (num1, num2) =>
-  (num2 === 0) ?
-    'Não é possivel divisao por zero' :
-    num1 / num2;
+const fizzbuzz = (n) => {
+  if (n % 3 === 0 && n % 5 === 0) return 'FizzBuzz';
 
-export { sum, sub, mult, div };
+  if (n % 3 === 0) return 'Fizz';
+
+  if (n % 5 === 0) return 'Buzz';
+
+  return n;
+};
+
+
+export default fizzbuzz;
