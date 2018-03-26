@@ -9,9 +9,11 @@
     "test:coverage": "nyc npm test",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "build:watch": "npm run build --",
-    "pre-push": "npm run lint"
+    "pre-push": "npm run lint && npm run test:coverage"
   },
   "nyc": {
+    "functions": "80",
+    "check-coverage": "true",
     "reporter": [
       "text",
       "html"
